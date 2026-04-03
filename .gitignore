@@ -136,3 +136,5 @@ via*.json
 
 !/keyboards/zsa/**/keymaps/larpi
 !/keyboards/zsa/**/keymaps/larpi/**
+
+.direnv
