@@ -17,5 +17,10 @@ import source_archive keyboard=DEFAULT_KEYBOARD keymap=DEFAULT_KEYMAP:
     @cp $(fd -t d . tmp/ | tail -n 1)/* keyboards/zsa/{{keyboard}}/keymaps/{{keymap}}/
     @rm -rf tmp/
 
+auto-import path="~/Downloads":
+    #!/usr/bin/env nu
+    let file = ls -l {{path}} | sort-by created | where { |it| $it.name | str ends-with "voyager_source.zip" } | last | get name
+    just import $file
+
 setup:
     @qmk setup
