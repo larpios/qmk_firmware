@@ -6,3 +6,4 @@ SPACE_CADET_ENABLE = no
 CAPS_WORD_ENABLE = yes
 REPEAT_KEY_ENABLE = yes
 LAYER_LOCK_ENABLE = yes
+SRC += indicators.c
