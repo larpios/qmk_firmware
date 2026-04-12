@@ -1,15 +1,15 @@
 # https://just.systems
-KEYBOARD := "voyager"
-KEYMAP := "larpi"
+DEFAULT_KEYBOARD := "voyager"
+DEFAULT_KEYMAP := "larpi"
 
 default:
     @just --list
 
-build:
-    @qmk compile -kb {{KEYBOARD}} -km {{KEYMAP}}
+build keyboard=DEFAULT_KEYBOARD keymap=DEFAULT_KEYMAP:
+    @qmk compile -kb {{keyboard}} -km {{keymap}}
 
-flash:
-    @qmk flash -kb {{KEYBOARD}} -km {{KEYMAP}}
+flash keyboard=DEFAULT_KEYBOARD keymap=DEFAULT_KEYMAP:
+    @qmk flash -kb {{keyboard}} -km {{keymap}}
 
 setup:
     @qmk setup
