@@ -1,4 +1,6 @@
-# https://just.systems
+# Don't forget to run `just setup`
+# If you are on Arch, install `zsa-udev` with pacman. Otherwise, you'll get some access permission errors
+
 DEFAULT_KEYBOARD := "voyager"
 DEFAULT_KEYMAP := "larpi"
 
