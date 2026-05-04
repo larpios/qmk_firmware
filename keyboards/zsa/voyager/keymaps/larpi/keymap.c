@@ -19,28 +19,28 @@ enum layer_names {
     LAYER_NAV,
     LAYER_MOUSE,
     LAYER_GAMING,
-    LAYER_ONE_HAND,
+    LAYER_GAMING_2,
     LAYER_EXTRA,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-//    ┌─────────┬─────────────────┬─────────────────┬───────────────────────┬─────────────────┬───────────────────────┐                                             ┌─────────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────┬──────────────────┐
-//    │    =    │        1        │        2        │           3           │        4        │           5           │                                             │          6          │        7        │        8        │        9        │        0        │        -         │
-//    ├─────────┼─────────────────┼─────────────────┼───────────────────────┼─────────────────┼───────────────────────┤                                             ├─────────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┼──────────────────┤
-//    │    `    │        q        │        w        │           e           │        r        │           t           │                                             │          y          │        u        │        i        │        o        │        p        │        \         │
-//    ├─────────┼─────────────────┼─────────────────┼───────────────────────┼─────────────────┼───────────────────────┤                                             ├─────────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┼──────────────────┤
-//    │   esc   │ MT(MOD_LGUI, a) │ MT(MOD_LALT, s) │    MT(MOD_LCTL, d)    │ MT(MOD_LSFT, f) │           g           │                                             │          h          │ MT(MOD_RSFT, j) │ MT(MOD_LCTL, k) │ MT(MOD_RALT, l) │ MT(MOD_RGUI, ;) │        '         │
-//    ├─────────┼─────────────────┼─────────────────┼───────────────────────┼─────────────────┼───────────────────────┤                                             ├─────────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┼──────────────────┤
-//    │ CW_TOGG │        z        │        x        │ LT(LAYER_ONE_HAND, c) │        v        │           b           │                                             │          n          │        m        │        ,        │        .        │        /        │ TG(LAYER_NO_HRM) │
-//    └─────────┴─────────────────┴─────────────────┴───────────────────────┴─────────────────┼───────────────────────┼──────────────────────┬──────────────────────┼─────────────────────┼─────────────────┴─────────────────┴─────────────────┴─────────────────┴──────────────────┘
-//                                                                                            │ LT(LAYER_SYMBOL, spc) │ LT(LAYER_MOUSE, tab) │ LT(LAYER_EXTRA, ent) │ LT(LAYER_NAV, bspc) │
-//                                                                                            └───────────────────────┴──────────────────────┴──────────────────────┴─────────────────────┘
+//    ┌─────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────┬───────────────────────┐                                             ┌─────────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────┬──────────────────┐
+//    │    =    │        1        │        2        │        3        │        4        │           5           │                                             │          6          │        7        │        8        │        9        │        0        │        -         │
+//    ├─────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┼───────────────────────┤                                             ├─────────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┼──────────────────┤
+//    │    `    │        q        │        w        │        e        │        r        │           t           │                                             │          y          │        u        │        i        │        o        │        p        │        \         │
+//    ├─────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┼───────────────────────┤                                             ├─────────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┼──────────────────┤
+//    │   esc   │ MT(MOD_LGUI, a) │ MT(MOD_LALT, s) │ MT(MOD_LCTL, d) │ MT(MOD_LSFT, f) │           g           │                                             │          h          │ MT(MOD_RSFT, j) │ MT(MOD_LCTL, k) │ MT(MOD_RALT, l) │ MT(MOD_RGUI, ;) │        '         │
+//    ├─────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┼───────────────────────┤                                             ├─────────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┼──────────────────┤
+//    │ CW_TOGG │        z        │        x        │        c        │        v        │           b           │                                             │          n          │        m        │        ,        │        .        │        /        │ TG(LAYER_NO_HRM) │
+//    └─────────┴─────────────────┴─────────────────┴─────────────────┴─────────────────┼───────────────────────┼──────────────────────┬──────────────────────┼─────────────────────┼─────────────────┴─────────────────┴─────────────────┴─────────────────┴──────────────────┘
+//                                                                                      │ LT(LAYER_SYMBOL, spc) │ LT(LAYER_MOUSE, tab) │ LT(LAYER_EXTRA, ent) │ LT(LAYER_NAV, bspc) │
+//                                                                                      └───────────────────────┴──────────────────────┴──────────────────────┴─────────────────────┘
 [LAYER_BASE] = LAYOUT_voyager(
-  KC_EQUAL  , KC_1               , KC_2               , KC_3                     , KC_4               , KC_5                       ,                                                       KC_6                   , KC_7               , KC_8               , KC_9               , KC_0                  , KC_MINUS        ,
-  KC_GRAVE  , KC_Q               , KC_W               , KC_E                     , KC_R               , KC_T                       ,                                                       KC_Y                   , KC_U               , KC_I               , KC_O               , KC_P                  , KC_BSLS         ,
-  KC_ESCAPE , MT(MOD_LGUI, KC_A) , MT(MOD_LALT, KC_S) , MT(MOD_LCTL, KC_D)       , MT(MOD_LSFT, KC_F) , KC_G                       ,                                                       KC_H                   , MT(MOD_RSFT, KC_J) , MT(MOD_LCTL, KC_K) , MT(MOD_RALT, KC_L) , MT(MOD_RGUI, KC_SCLN) , KC_QUOTE        ,
-  CW_TOGG   , KC_Z               , KC_X               , LT(LAYER_ONE_HAND, KC_C) , KC_V               , KC_B                       ,                                                       KC_N                   , KC_M               , KC_COMMA           , KC_DOT             , KC_SLASH              , TG(LAYER_NO_HRM),
-                                                                                                        LT(LAYER_SYMBOL, KC_SPACE) , LT(LAYER_MOUSE, KC_TAB) , LT(LAYER_EXTRA, KC_ENTER) , LT(LAYER_NAV, KC_BSPC)
+  KC_EQUAL  , KC_1               , KC_2               , KC_3               , KC_4               , KC_5                       ,                                                       KC_6                   , KC_7               , KC_8               , KC_9               , KC_0                  , KC_MINUS        ,
+  KC_GRAVE  , KC_Q               , KC_W               , KC_E               , KC_R               , KC_T                       ,                                                       KC_Y                   , KC_U               , KC_I               , KC_O               , KC_P                  , KC_BSLS         ,
+  KC_ESCAPE , MT(MOD_LGUI, KC_A) , MT(MOD_LALT, KC_S) , MT(MOD_LCTL, KC_D) , MT(MOD_LSFT, KC_F) , KC_G                       ,                                                       KC_H                   , MT(MOD_RSFT, KC_J) , MT(MOD_LCTL, KC_K) , MT(MOD_RALT, KC_L) , MT(MOD_RGUI, KC_SCLN) , KC_QUOTE        ,
+  CW_TOGG   , KC_Z               , KC_X               , KC_C               , KC_V               , KC_B                       ,                                                       KC_N                   , KC_M               , KC_COMMA           , KC_DOT             , KC_SLASH              , TG(LAYER_NO_HRM),
+                                                                                                  LT(LAYER_SYMBOL, KC_SPACE) , LT(LAYER_MOUSE, KC_TAB) , LT(LAYER_EXTRA, KC_ENTER) , LT(LAYER_NAV, KC_BSPC)
 ),
 
 //    ┌───────┬───────┬───────┬───────┬───────┬───────┐               ┌───────┬───────┬───────┬───────┬───────┬───────┐
@@ -81,15 +81,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                        KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_0
 ),
 
-//    ┌─────────┬────────────────────┬──────────────────┬───────────────┬────────────────┬─────────────────┐               ┌─────────────────┬─────────┬───────┬───────┬───────────┬─────────┐
-//    │ RGB_TOG │ TOGGLE_LAYER_COLOR │ RGB_MODE_FORWARD │    RGB_SLD    │    RGB_VAD     │     RGB_VAI     │               │      trans      │  trans  │ trans │ trans │   trans   │ QK_BOOT │
-//    ├─────────┼────────────────────┼──────────────────┼───────────────┼────────────────┼─────────────────┤               ├─────────────────┼─────────┼───────┼───────┼───────────┼─────────┤
-//    │  mprv   │       trans        │       vold       │     volu      │      mute      │      trans      │               │ LCTL(LSFT(tab)) │  home   │  up   │  end  │   trans   │  trans  │
-//    ├─────────┼────────────────────┼──────────────────┼───────────────┼────────────────┼─────────────────┤               ├─────────────────┼─────────┼───────┼───────┼───────────┼─────────┤
-//    │  trans  │      left_GUI      │     left_ALT     │   left_CTRL   │   left_SHIFT   │      trans      │               │    LCTL(tab)    │  left   │ down  │ rght  │ rght_CTRL │  trans  │
-//    ├─────────┼────────────────────┼──────────────────┼───────────────┼────────────────┼─────────────────┤               ├─────────────────┼─────────┼───────┼───────┼───────────┼─────────┤
-//    │  trans  │     left_CTRL      │    left_SHIFT    │ HSV_0_255_255 │ HSV_74_255_255 │ HSV_169_255_255 │               │      trans      │ pAGE_UP │ pgdn  │ trans │   trans   │  trans  │
-//    └─────────┴────────────────────┴──────────────────┴───────────────┴────────────────┼─────────────────┼───────┬───────┼─────────────────┼─────────┴───────┴───────┴───────────┴─────────┘
+//    ┌─────────┬────────────────────┬──────────────────┬───────────────┬────────────────┬─────────────────┐               ┌─────────────────┬─────────┬───────┬───────┬───────┬─────────┐
+//    │ RGB_TOG │ TOGGLE_LAYER_COLOR │ RGB_MODE_FORWARD │    RGB_SLD    │    RGB_VAD     │     RGB_VAI     │               │      trans      │  trans  │ trans │ trans │ trans │ QK_BOOT │
+//    ├─────────┼────────────────────┼──────────────────┼───────────────┼────────────────┼─────────────────┤               ├─────────────────┼─────────┼───────┼───────┼───────┼─────────┤
+//    │  mprv   │       trans        │       vold       │     volu      │      mute      │      trans      │               │ LCTL(LSFT(tab)) │  home   │  up   │  end  │ trans │  trans  │
+//    ├─────────┼────────────────────┼──────────────────┼───────────────┼────────────────┼─────────────────┤               ├─────────────────┼─────────┼───────┼───────┼───────┼─────────┤
+//    │  trans  │        LGUI        │       LALT       │     LCTRL     │     LSHIFT     │      trans      │               │    LCTL(tab)    │  left   │ down  │ rght  │ RCTRL │  trans  │
+//    ├─────────┼────────────────────┼──────────────────┼───────────────┼────────────────┼─────────────────┤               ├─────────────────┼─────────┼───────┼───────┼───────┼─────────┤
+//    │  trans  │       LCTRL        │      LSHIFT      │ HSV_0_255_255 │ HSV_74_255_255 │ HSV_169_255_255 │               │      trans      │ pAGE_UP │ pgdn  │ trans │ trans │  trans  │
+//    └─────────┴────────────────────┴──────────────────┴───────────────┴────────────────┼─────────────────┼───────┬───────┼─────────────────┼─────────┴───────┴───────┴───────┴─────────┘
 //                                                                                       │      trans      │ trans │ trans │      trans      │
 //                                                                                       └─────────────────┴───────┴───────┴─────────────────┘
 [LAYER_NAV] = LAYOUT_voyager(
@@ -100,17 +100,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                                                     KC_TRANSPARENT  , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT
 ),
 
-//    ┌───────────────────┬───────────────────┬──────────┬───────────┬────────────┬───────────────┐               ┌───────────────┬─────────────────┬──────────┬──────────┬───────────────────┬───────┐
-//    │ NAVIGATOR_DEC_CPI │ NAVIGATOR_INC_CPI │  trans   │   trans   │   trans    │    QK_LLCK    │               │     trans     │      trans      │  trans   │  trans   │       trans       │ trans │
-//    ├───────────────────┼───────────────────┼──────────┼───────────┼────────────┼───────────────┤               ├───────────────┼─────────────────┼──────────┼──────────┼───────────────────┼───────┤
-//    │       trans       │       ms_l        │   ms_d   │   ms_u    │    ms_r    │ TOGGLE_SCROLL │               │     trans     │      trans      │  trans   │  trans   │ mS_JIGGLER_TOGGLE │ trans │
-//    ├───────────────────┼───────────────────┼──────────┼───────────┼────────────┼───────────────┤               ├───────────────┼─────────────────┼──────────┼──────────┼───────────────────┼───────┤
-//    │       trans       │       trans       │   btn3   │   btn2    │    btn1    │  DRAG_SCROLL  │               │  left_SHIFT   │    left_CTRL    │ left_ALT │ left_GUI │       trans       │ trans │
-//    ├───────────────────┼───────────────────┼──────────┼───────────┼────────────┼───────────────┤               ├───────────────┼─────────────────┼──────────┼──────────┼───────────────────┼───────┤
-//    │       trans       │     left_GUI      │ left_ALT │ left_CTRL │ left_SHIFT │     trans     │               │ NAVIGATOR_AIM │ NAVIGATOR_TURBO │  trans   │  trans   │       trans       │ trans │
-//    └───────────────────┴───────────────────┴──────────┴───────────┴────────────┼───────────────┼───────┬───────┼───────────────┼─────────────────┴──────────┴──────────┴───────────────────┴───────┘
-//                                                                                │     trans     │ trans │ trans │     trans     │
-//                                                                                └───────────────┴───────┴───────┴───────────────┘
+//    ┌───────────────────┬───────────────────┬───────┬───────┬────────┬───────────────┐               ┌───────────────┬─────────────────┬───────┬───────┬───────────────────┬───────┐
+//    │ NAVIGATOR_DEC_CPI │ NAVIGATOR_INC_CPI │ trans │ trans │ trans  │    QK_LLCK    │               │     trans     │      trans      │ trans │ trans │       trans       │ trans │
+//    ├───────────────────┼───────────────────┼───────┼───────┼────────┼───────────────┤               ├───────────────┼─────────────────┼───────┼───────┼───────────────────┼───────┤
+//    │       trans       │       ms_l        │ ms_d  │ ms_u  │  ms_r  │ TOGGLE_SCROLL │               │     trans     │      trans      │ trans │ trans │ mS_JIGGLER_TOGGLE │ trans │
+//    ├───────────────────┼───────────────────┼───────┼───────┼────────┼───────────────┤               ├───────────────┼─────────────────┼───────┼───────┼───────────────────┼───────┤
+//    │       trans       │       trans       │ btn3  │ btn2  │  btn1  │  DRAG_SCROLL  │               │    LSHIFT     │      LCTRL      │ LALT  │ LGUI  │       trans       │ trans │
+//    ├───────────────────┼───────────────────┼───────┼───────┼────────┼───────────────┤               ├───────────────┼─────────────────┼───────┼───────┼───────────────────┼───────┤
+//    │       trans       │       LGUI        │ LALT  │ LCTRL │ LSHIFT │     trans     │               │ NAVIGATOR_AIM │ NAVIGATOR_TURBO │ trans │ trans │       trans       │ trans │
+//    └───────────────────┴───────────────────┴───────┴───────┴────────┼───────────────┼───────┬───────┼───────────────┼─────────────────┴───────┴───────┴───────────────────┴───────┘
+//                                                                     │     trans     │ trans │ trans │     trans     │
+//                                                                     └───────────────┴───────┴───────┴───────────────┘
 [LAYER_MOUSE] = LAYOUT_voyager(
   NAVIGATOR_DEC_CPI , NAVIGATOR_INC_CPI , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , QK_LLCK        ,                                   KC_TRANSPARENT , KC_TRANSPARENT  , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT       , KC_TRANSPARENT,
   KC_TRANSPARENT    , KC_MS_LEFT        , KC_MS_DOWN     , KC_MS_UP       , KC_MS_RIGHT    , TOGGLE_SCROLL  ,                                   KC_TRANSPARENT , KC_TRANSPARENT  , KC_TRANSPARENT , KC_TRANSPARENT , KC_MS_JIGGLER_TOGGLE , KC_TRANSPARENT,
@@ -120,60 +120,60 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 //    ┌────────────────┬───────┬───────┬───────┬───────┬───────┐            ┌───────┬───────┬───────┬───────┬───────┬───────┐
-//    │     trans      │ trans │ trans │ trans │ trans │ trans │            │ trans │ trans │ trans │ trans │ trans │   h   │
+//    │     trans      │ trans │ trans │ trans │ trans │ trans │            │ trans │ trans │ trans │ trans │ trans │   n   │
 //    ├────────────────┼───────┼───────┼───────┼───────┼───────┤            ├───────┼───────┼───────┼───────┼───────┼───────┤
 //    │      esc       │ trans │ trans │ trans │ trans │ trans │            │ trans │ trans │  up   │ trans │ trans │ trans │
 //    ├────────────────┼───────┼───────┼───────┼───────┼───────┤            ├───────┼───────┼───────┼───────┼───────┼───────┤
-//    │   left_SHIFT   │   a   │   s   │   d   │   f   │ trans │            │ btn2  │ left  │ down  │ rght  │   ;   │ trans │
+//    │     LSHIFT     │   a   │   s   │   d   │   f   │ trans │            │ trans │ left  │ down  │ rght  │   ;   │ trans │
 //    ├────────────────┼───────┼───────┼───────┼───────┼───────┤            ├───────┼───────┼───────┼───────┼───────┼───────┤
-//    │ TO(LAYER_BASE) │ trans │ trans │ trans │ trans │ trans │            │ trans │ trans │ trans │ trans │ bspc  │  ent  │
+//    │ TO(LAYER_BASE) │ trans │ trans │ trans │ trans │ trans │            │ btn2  │ trans │ trans │ trans │ bspc  │  ent  │
 //    └────────────────┴───────┴───────┴───────┴───────┼───────┼─────┬──────┼───────┼───────┴───────┴───────┴───────┴───────┘
 //                                                     │  spc  │ tab │ btn1 │ btn3  │
 //                                                     └───────┴─────┴──────┴───────┘
 [LAYER_GAMING] = LAYOUT_voyager(
-  KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT ,                       KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_H          ,
+  KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT ,                       KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_N          ,
   KC_ESCAPE      , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT ,                       KC_TRANSPARENT , KC_TRANSPARENT , KC_UP          , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT,
-  KC_LEFT_SHIFT  , KC_A           , KC_S           , KC_D           , KC_F           , KC_TRANSPARENT ,                       KC_MS_BTN2     , KC_LEFT        , KC_DOWN        , KC_RIGHT       , KC_SCLN        , KC_TRANSPARENT,
-  TO(LAYER_BASE) , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT ,                       KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_BSPC        , KC_ENTER      ,
+  KC_LEFT_SHIFT  , KC_A           , KC_S           , KC_D           , KC_F           , KC_TRANSPARENT ,                       KC_TRANSPARENT , KC_LEFT        , KC_DOWN        , KC_RIGHT       , KC_SCLN        , KC_TRANSPARENT,
+  TO(LAYER_BASE) , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT ,                       KC_MS_BTN2     , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_BSPC        , KC_ENTER      ,
                                                                                        KC_SPACE       , KC_TAB , KC_MS_BTN1 , KC_MS_BTN3
 ),
 
-//    ┌─────────┬───────┬───────┬───────┬───────┬───────┐               ┌───────┬───────┬───────┬───────┬───────┬───────┐
-//    │  trans  │ trans │ trans │ trans │ trans │ trans │               │ trans │ trans │ trans │ trans │ trans │ trans │
-//    ├─────────┼───────┼───────┼───────┼───────┼───────┤               ├───────┼───────┼───────┼───────┼───────┼───────┤
-//    │ QK_LLCK │ trans │ trans │  up   │ trans │ trans │               │ trans │ trans │ trans │ trans │ trans │ trans │
-//    ├─────────┼───────┼───────┼───────┼───────┼───────┤               ├───────┼───────┼───────┼───────┼───────┼───────┤
-//    │  trans  │ trans │ left  │ down  │ rght  │ trans │               │ trans │ trans │ trans │ trans │ trans │ trans │
-//    ├─────────┼───────┼───────┼───────┼───────┼───────┤               ├───────┼───────┼───────┼───────┼───────┼───────┤
-//    │  trans  │ trans │ trans │ trans │ trans │ trans │               │ trans │ trans │ trans │ trans │ trans │ trans │
-//    └─────────┴───────┴───────┴───────┴───────┼───────┼───────┬───────┼───────┼───────┴───────┴───────┴───────┴───────┘
-//                                              │ trans │ trans │ trans │ trans │
-//                                              └───────┴───────┴───────┴───────┘
-[LAYER_ONE_HAND] = LAYOUT_voyager(
-  KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT ,                                   KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT,
-  QK_LLCK        , KC_TRANSPARENT , KC_TRANSPARENT , KC_UP          , KC_TRANSPARENT , KC_TRANSPARENT ,                                   KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT,
-  KC_TRANSPARENT , KC_TRANSPARENT , KC_LEFT        , KC_DOWN        , KC_RIGHT       , KC_TRANSPARENT ,                                   KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT,
-  KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT ,                                   KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT,
-                                                                                       KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT
+//    ┌────────────────┬───────┬───────┬───────┬───────┬───────┐             ┌───────┬───────┬───────┬───────┬───────┬───────┐
+//    │     trans      │ trans │ trans │ trans │ trans │ trans │             │ trans │ trans │ trans │ trans │ trans │   n   │
+//    ├────────────────┼───────┼───────┼───────┼───────┼───────┤             ├───────┼───────┼───────┼───────┼───────┼───────┤
+//    │      esc       │ trans │ trans │ trans │ trans │ trans │             │ btn1  │ trans │  up   │ trans │ trans │ trans │
+//    ├────────────────┼───────┼───────┼───────┼───────┼───────┤             ├───────┼───────┼───────┼───────┼───────┼───────┤
+//    │     LSHIFT     │   a   │   s   │   d   │   f   │ trans │             │ btn3  │ left  │ down  │ rght  │   ;   │ trans │
+//    ├────────────────┼───────┼───────┼───────┼───────┼───────┤             ├───────┼───────┼───────┼───────┼───────┼───────┤
+//    │ TO(LAYER_BASE) │ trans │ trans │ trans │ trans │ trans │             │ btn2  │ trans │ trans │ trans │ bspc  │  ent  │
+//    └────────────────┴───────┴───────┴───────┴───────┼───────┼─────┬───────┼───────┼───────┴───────┴───────┴───────┴───────┘
+//                                                     │  spc  │ tab │ trans │ trans │
+//                                                     └───────┴─────┴───────┴───────┘
+[LAYER_GAMING_2] = LAYOUT_voyager(
+  KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT ,                           KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_N          ,
+  KC_ESCAPE      , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT ,                           KC_MS_BTN1     , KC_TRANSPARENT , KC_UP          , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT,
+  KC_LEFT_SHIFT  , KC_A           , KC_S           , KC_D           , KC_F           , KC_TRANSPARENT ,                           KC_MS_BTN3     , KC_LEFT        , KC_DOWN        , KC_RIGHT       , KC_SCLN        , KC_TRANSPARENT,
+  TO(LAYER_BASE) , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT ,                           KC_MS_BTN2     , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_BSPC        , KC_ENTER      ,
+                                                                                       KC_SPACE       , KC_TAB , KC_TRANSPARENT , KC_TRANSPARENT
 ),
 
-//    ┌───────┬───────────────┬───────────────┬───────────────┬───────────────┬──────────────────┐              ┌───────┬───────┬───────┬───────┬──────────────┬───────┐
-//    │ trans │     trans     │     trans     │     trans     │     trans     │      trans       │              │ trans │ trans │ trans │ trans │    trans     │ trans │
-//    ├───────┼───────────────┼───────────────┼───────────────┼───────────────┼──────────────────┤              ├───────┼───────┼───────┼───────┼──────────────┼───────┤
-//    │ trans │     trans     │     trans     │     trans     │     trans     │     LALT(f4)     │              │ trans │ trans │ trans │ trans │ system_power │ trans │
-//    ├───────┼───────────────┼───────────────┼───────────────┼───────────────┼──────────────────┤              ├───────┼───────┼───────┼───────┼──────────────┼───────┤
-//    │ trans │ OSM(MOD_LGUI) │ OSM(MOD_LALT) │ OSM(MOD_LCTL) │ OSM(MOD_LSFT) │ TG(LAYER_GAMING) │              │ trans │ trans │ trans │ trans │    trans     │ trans │
-//    ├───────┼───────────────┼───────────────┼───────────────┼───────────────┼──────────────────┤              ├───────┼───────┼───────┼───────┼──────────────┼───────┤
-//    │ trans │     trans     │     trans     │     trans     │     trans     │      trans       │              │ trans │ trans │ trans │ trans │    trans     │ trans │
-//    └───────┴───────────────┴───────────────┴───────────────┴───────────────┼──────────────────┼──────┬───────┼───────┼───────┴───────┴───────┴──────────────┴───────┘
-//                                                                            │     CW_TOGG      │ caps │ trans │ trans │
-//                                                                            └──────────────────┴──────┴───────┴───────┘
+//    ┌───────┬──────────────────┬────────────────────┬───────────────┬───────────────┬──────────────────┐              ┌───────┬───────┬───────┬───────┬──────────────┬───────┐
+//    │ trans │ TG(LAYER_GAMING) │ TG(LAYER_GAMING_2) │     trans     │     trans     │      trans       │              │ trans │ trans │ trans │ trans │    trans     │ trans │
+//    ├───────┼──────────────────┼────────────────────┼───────────────┼───────────────┼──────────────────┤              ├───────┼───────┼───────┼───────┼──────────────┼───────┤
+//    │ trans │      trans       │       trans        │     trans     │     trans     │     LALT(f4)     │              │ trans │ trans │ trans │ trans │ system_power │ trans │
+//    ├───────┼──────────────────┼────────────────────┼───────────────┼───────────────┼──────────────────┤              ├───────┼───────┼───────┼───────┼──────────────┼───────┤
+//    │ trans │  OSM(MOD_LGUI)   │   OSM(MOD_LALT)    │ OSM(MOD_LCTL) │ OSM(MOD_LSFT) │ TG(LAYER_GAMING) │              │ trans │ trans │ trans │ trans │    trans     │ trans │
+//    ├───────┼──────────────────┼────────────────────┼───────────────┼───────────────┼──────────────────┤              ├───────┼───────┼───────┼───────┼──────────────┼───────┤
+//    │ trans │      trans       │       trans        │     trans     │     trans     │      trans       │              │ trans │ trans │ trans │ trans │    trans     │ trans │
+//    └───────┴──────────────────┴────────────────────┴───────────────┴───────────────┼──────────────────┼──────┬───────┼───────┼───────┴───────┴───────┴──────────────┴───────┘
+//                                                                                    │     CW_TOGG      │ caps │ trans │ trans │
+//                                                                                    └──────────────────┴──────┴───────┴───────┘
 [LAYER_EXTRA] = LAYOUT_voyager(
-  KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT   ,                            KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT  , KC_TRANSPARENT,
-  KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , LALT(KC_F4)      ,                            KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_SYSTEM_POWER , KC_TRANSPARENT,
-  KC_TRANSPARENT , OSM(MOD_LGUI)  , OSM(MOD_LALT)  , OSM(MOD_LCTL)  , OSM(MOD_LSFT)  , TG(LAYER_GAMING) ,                            KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT  , KC_TRANSPARENT,
-  KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT   ,                            KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT  , KC_TRANSPARENT,
-                                                                                       CW_TOGG          , KC_CAPS , KC_TRANSPARENT , KC_TRANSPARENT
+  KC_TRANSPARENT , TG(LAYER_GAMING) , TG(LAYER_GAMING_2) , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT   ,                            KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT  , KC_TRANSPARENT,
+  KC_TRANSPARENT , KC_TRANSPARENT   , KC_TRANSPARENT     , KC_TRANSPARENT , KC_TRANSPARENT , LALT(KC_F4)      ,                            KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_SYSTEM_POWER , KC_TRANSPARENT,
+  KC_TRANSPARENT , OSM(MOD_LGUI)    , OSM(MOD_LALT)      , OSM(MOD_LCTL)  , OSM(MOD_LSFT)  , TG(LAYER_GAMING) ,                            KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT  , KC_TRANSPARENT,
+  KC_TRANSPARENT , KC_TRANSPARENT   , KC_TRANSPARENT     , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT   ,                            KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT  , KC_TRANSPARENT,
+                                                                                             CW_TOGG          , KC_CAPS , KC_TRANSPARENT , KC_TRANSPARENT
 )
 };
 
@@ -224,3 +224,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     return true;
 }
+
+
+report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
+    if (layer_state_is(LAYER_GAMING_2)) {
+        // Swap X and Y for a 90-degree turn, so you can grab the trackball like a mouse and still be able to click keys
+        const float MULTIPLIER_X = 1.6f;
+        const float MULTIPLIER_Y = 2.4f;
+        int16_t new_x = mouse_report.y * MULTIPLIER_X;
+        int16_t new_y = -mouse_report.x * MULTIPLIER_Y;
+        mouse_report.x = new_x;
+        mouse_report.y = new_y;
+    }
+    return mouse_report;
+}
+
