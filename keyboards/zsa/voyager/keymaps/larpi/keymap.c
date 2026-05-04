@@ -100,22 +100,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                                                     KC_TRANSPARENT  , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT
 ),
 
-//    ┌───────────────────┬───────────────────┬───────────────┬───────────────┬───────────────┬───────────────┐               ┌───────────────┬─────────────────┬──────────┬──────────┬───────────────────┬───────┐
-//    │ NAVIGATOR_DEC_CPI │ NAVIGATOR_INC_CPI │     trans     │     trans     │     trans     │    QK_LLCK    │               │     trans     │      trans      │  trans   │  trans   │       trans       │ trans │
-//    ├───────────────────┼───────────────────┼───────────────┼───────────────┼───────────────┼───────────────┤               ├───────────────┼─────────────────┼──────────┼──────────┼───────────────────┼───────┤
-//    │       trans       │       ms_l        │     ms_d      │     ms_u      │     ms_r      │ TOGGLE_SCROLL │               │     trans     │      trans      │  trans   │  trans   │ mS_JIGGLER_TOGGLE │ trans │
-//    ├───────────────────┼───────────────────┼───────────────┼───────────────┼───────────────┼───────────────┤               ├───────────────┼─────────────────┼──────────┼──────────┼───────────────────┼───────┤
-//    │       trans       │       trans       │     btn3      │     btn2      │     btn1      │  DRAG_SCROLL  │               │  left_SHIFT   │    left_CTRL    │ left_ALT │ left_GUI │       trans       │ trans │
-//    ├───────────────────┼───────────────────┼───────────────┼───────────────┼───────────────┼───────────────┤               ├───────────────┼─────────────────┼──────────┼──────────┼───────────────────┼───────┤
-//    │       trans       │   OSM(MOD_LGUI)   │ OSM(MOD_LALT) │ OSM(MOD_LCTL) │ OSM(MOD_LSFT) │     trans     │               │ NAVIGATOR_AIM │ NAVIGATOR_TURBO │  trans   │  trans   │       trans       │ trans │
-//    └───────────────────┴───────────────────┴───────────────┴───────────────┴───────────────┼───────────────┼───────┬───────┼───────────────┼─────────────────┴──────────┴──────────┴───────────────────┴───────┘
-//                                                                                            │     trans     │ trans │ trans │     trans     │
-//                                                                                            └───────────────┴───────┴───────┴───────────────┘
+//    ┌───────────────────┬───────────────────┬──────────┬───────────┬────────────┬───────────────┐               ┌───────────────┬─────────────────┬──────────┬──────────┬───────────────────┬───────┐
+//    │ NAVIGATOR_DEC_CPI │ NAVIGATOR_INC_CPI │  trans   │   trans   │   trans    │    QK_LLCK    │               │     trans     │      trans      │  trans   │  trans   │       trans       │ trans │
+//    ├───────────────────┼───────────────────┼──────────┼───────────┼────────────┼───────────────┤               ├───────────────┼─────────────────┼──────────┼──────────┼───────────────────┼───────┤
+//    │       trans       │       ms_l        │   ms_d   │   ms_u    │    ms_r    │ TOGGLE_SCROLL │               │     trans     │      trans      │  trans   │  trans   │ mS_JIGGLER_TOGGLE │ trans │
+//    ├───────────────────┼───────────────────┼──────────┼───────────┼────────────┼───────────────┤               ├───────────────┼─────────────────┼──────────┼──────────┼───────────────────┼───────┤
+//    │       trans       │       trans       │   btn3   │   btn2    │    btn1    │  DRAG_SCROLL  │               │  left_SHIFT   │    left_CTRL    │ left_ALT │ left_GUI │       trans       │ trans │
+//    ├───────────────────┼───────────────────┼──────────┼───────────┼────────────┼───────────────┤               ├───────────────┼─────────────────┼──────────┼──────────┼───────────────────┼───────┤
+//    │       trans       │     left_GUI      │ left_ALT │ left_CTRL │ left_SHIFT │     trans     │               │ NAVIGATOR_AIM │ NAVIGATOR_TURBO │  trans   │  trans   │       trans       │ trans │
+//    └───────────────────┴───────────────────┴──────────┴───────────┴────────────┼───────────────┼───────┬───────┼───────────────┼─────────────────┴──────────┴──────────┴───────────────────┴───────┘
+//                                                                                │     trans     │ trans │ trans │     trans     │
+//                                                                                └───────────────┴───────┴───────┴───────────────┘
 [LAYER_MOUSE] = LAYOUT_voyager(
   NAVIGATOR_DEC_CPI , NAVIGATOR_INC_CPI , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , QK_LLCK        ,                                   KC_TRANSPARENT , KC_TRANSPARENT  , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT       , KC_TRANSPARENT,
   KC_TRANSPARENT    , KC_MS_LEFT        , KC_MS_DOWN     , KC_MS_UP       , KC_MS_RIGHT    , TOGGLE_SCROLL  ,                                   KC_TRANSPARENT , KC_TRANSPARENT  , KC_TRANSPARENT , KC_TRANSPARENT , KC_MS_JIGGLER_TOGGLE , KC_TRANSPARENT,
   KC_TRANSPARENT    , KC_TRANSPARENT    , KC_MS_BTN3     , KC_MS_BTN2     , KC_MS_BTN1     , DRAG_SCROLL    ,                                   KC_LEFT_SHIFT  , KC_LEFT_CTRL    , KC_LEFT_ALT    , KC_LEFT_GUI    , KC_TRANSPARENT       , KC_TRANSPARENT,
-  KC_TRANSPARENT    , OSM(MOD_LGUI)     , OSM(MOD_LALT)  , OSM(MOD_LCTL)  , OSM(MOD_LSFT)  , KC_TRANSPARENT ,                                   NAVIGATOR_AIM  , NAVIGATOR_TURBO , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT       , KC_TRANSPARENT,
+  KC_TRANSPARENT    , KC_LEFT_GUI       , KC_LEFT_ALT    , KC_LEFT_CTRL   , KC_LEFT_SHIFT  , KC_TRANSPARENT ,                                   NAVIGATOR_AIM  , NAVIGATOR_TURBO , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT       , KC_TRANSPARENT,
                                                                                              KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT
 ),
 
