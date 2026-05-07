@@ -120,40 +120,40 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 //    ┌────────────────┬───────┬───────┬───────┬───────┬───────┐            ┌───────┬───────┬───────┬───────┬───────┬───────┐
-//    │     trans      │ trans │ trans │ trans │ trans │ trans │            │ trans │ trans │ trans │ trans │ trans │   n   │
+//    │ TO(LAYER_BASE) │ trans │ trans │ trans │ trans │ trans │            │ trans │ trans │ trans │ trans │ trans │   n   │
 //    ├────────────────┼───────┼───────┼───────┼───────┼───────┤            ├───────┼───────┼───────┼───────┼───────┼───────┤
 //    │      esc       │ trans │ trans │ trans │ trans │ trans │            │ trans │ trans │  up   │ trans │ trans │ trans │
 //    ├────────────────┼───────┼───────┼───────┼───────┼───────┤            ├───────┼───────┼───────┼───────┼───────┼───────┤
 //    │     LSHIFT     │   a   │   s   │   d   │   f   │ trans │            │ trans │ left  │ down  │ rght  │   ;   │ trans │
 //    ├────────────────┼───────┼───────┼───────┼───────┼───────┤            ├───────┼───────┼───────┼───────┼───────┼───────┤
-//    │ TO(LAYER_BASE) │ trans │ trans │ trans │ trans │ trans │            │ btn2  │ trans │ trans │ trans │ bspc  │  ent  │
+//    │     LCTRL      │ trans │ trans │ trans │ trans │ trans │            │ btn2  │ trans │ trans │ trans │ bspc  │  ent  │
 //    └────────────────┴───────┴───────┴───────┴───────┼───────┼─────┬──────┼───────┼───────┴───────┴───────┴───────┴───────┘
 //                                                     │  spc  │ tab │ btn1 │ btn3  │
 //                                                     └───────┴─────┴──────┴───────┘
 [LAYER_GAMING] = LAYOUT_voyager(
-  KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT ,                       KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_N          ,
+  TO(LAYER_BASE) , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT ,                       KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_N          ,
   KC_ESCAPE      , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT ,                       KC_TRANSPARENT , KC_TRANSPARENT , KC_UP          , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT,
   KC_LEFT_SHIFT  , KC_A           , KC_S           , KC_D           , KC_F           , KC_TRANSPARENT ,                       KC_TRANSPARENT , KC_LEFT        , KC_DOWN        , KC_RIGHT       , KC_SCLN        , KC_TRANSPARENT,
-  TO(LAYER_BASE) , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT ,                       KC_MS_BTN2     , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_BSPC        , KC_ENTER      ,
+  KC_LEFT_CTRL   , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT ,                       KC_MS_BTN2     , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_BSPC        , KC_ENTER      ,
                                                                                        KC_SPACE       , KC_TAB , KC_MS_BTN1 , KC_MS_BTN3
 ),
 
 //    ┌────────────────┬───────┬───────┬───────┬───────┬───────┐             ┌───────┬───────┬───────┬───────┬───────┬───────┐
-//    │     trans      │ trans │ trans │ trans │ trans │ trans │             │ trans │ trans │ trans │ trans │ trans │   n   │
+//    │ TO(LAYER_BASE) │ trans │ trans │ trans │ trans │ trans │             │ trans │ trans │ trans │ trans │ trans │   n   │
 //    ├────────────────┼───────┼───────┼───────┼───────┼───────┤             ├───────┼───────┼───────┼───────┼───────┼───────┤
 //    │      esc       │ trans │ trans │ trans │ trans │ trans │             │ btn1  │ trans │  up   │ trans │ trans │ trans │
 //    ├────────────────┼───────┼───────┼───────┼───────┼───────┤             ├───────┼───────┼───────┼───────┼───────┼───────┤
 //    │     LSHIFT     │   a   │   s   │   d   │   f   │ trans │             │ btn3  │ left  │ down  │ rght  │   ;   │ trans │
 //    ├────────────────┼───────┼───────┼───────┼───────┼───────┤             ├───────┼───────┼───────┼───────┼───────┼───────┤
-//    │ TO(LAYER_BASE) │ trans │ trans │ trans │ trans │ trans │             │ btn2  │ trans │ trans │ trans │ bspc  │  ent  │
+//    │     LCTRL      │ trans │ trans │ trans │ trans │ trans │             │ btn2  │ trans │ trans │ trans │ bspc  │  ent  │
 //    └────────────────┴───────┴───────┴───────┴───────┼───────┼─────┬───────┼───────┼───────┴───────┴───────┴───────┴───────┘
 //                                                     │  spc  │ tab │ trans │ trans │
 //                                                     └───────┴─────┴───────┴───────┘
 [LAYER_GAMING_2] = LAYOUT_voyager(
-  KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT ,                           KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_N          ,
+  TO(LAYER_BASE) , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT ,                           KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_N          ,
   KC_ESCAPE      , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT ,                           KC_MS_BTN1     , KC_TRANSPARENT , KC_UP          , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT,
   KC_LEFT_SHIFT  , KC_A           , KC_S           , KC_D           , KC_F           , KC_TRANSPARENT ,                           KC_MS_BTN3     , KC_LEFT        , KC_DOWN        , KC_RIGHT       , KC_SCLN        , KC_TRANSPARENT,
-  TO(LAYER_BASE) , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT ,                           KC_MS_BTN2     , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_BSPC        , KC_ENTER      ,
+  KC_LEFT_CTRL   , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT ,                           KC_MS_BTN2     , KC_TRANSPARENT , KC_TRANSPARENT , KC_TRANSPARENT , KC_BSPC        , KC_ENTER      ,
                                                                                        KC_SPACE       , KC_TAB , KC_TRANSPARENT , KC_TRANSPARENT
 ),
 
